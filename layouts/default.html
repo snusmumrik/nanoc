@@ -9,6 +9,7 @@
 
   <body>
     <div id="main">
+      <%= tags_for(@item, {:base_url => "/tags/"}) %>
       <%= yield %>
       <% if @item[:author] %>
         <p>This page was written by <%= @item[:author] %>.</p>
@@ -29,6 +30,8 @@
       </ul>
       <h2>Recent Entries</h2>
       <%= render("_article_list") %>
+      <h2>Tags</h2>
+      <%= render("_tag_summary") %>
       <h2>Links</h2>
       <ul>
         <li><%= link_to "Home", "/" %></li>

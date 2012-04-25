@@ -1,0 +1,11 @@
+<% articles_by_y_m = articles_by_year_month %>
+<ul>
+<% articles_by_y_m.keys.sort_by{|e| -e}.each do |year| %>
+  <% articles_by_y_m[year].keys.sort_by{|e| -e}.each do |month| %>
+    <li>
+      <%= link_to("#{year}/#{mm_str_month(month)}", "/archives/#{year}/#{mm_str_month(month)}/") %>
+      (<%= articles_by_y_m[year][month].size %>)
+    </li>
+  <% end %>
+<% end %>
+</ul>

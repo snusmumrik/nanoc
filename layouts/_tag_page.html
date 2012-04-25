@@ -1,0 +1,15 @@
+<h2>Contents tagged with "<%= tag %>"</h2>
+<% if taged_items = items_with_tag(tag) %>
+  <ul>
+    <% taged_items.sort_by{|e| e[:created_at]}.reverse.each do |item| %>
+      <li>
+        <%= link_to(item[:title], item.path) %><br />
+        <span class="summary-meta">
+          <%= render('_summary_meta', :item => item) %>
+        </span>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>none</p>
+<% end %>

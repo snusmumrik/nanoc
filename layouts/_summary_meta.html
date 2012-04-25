@@ -1,0 +1,2 @@
+<% if @item[:author] %>Written by <%= @item[:author] %> <% end %><br />
+<%= @item[:created_at] %> <% if @item[:tags] %>[<%= @item[:tags].join(", ")%>]<% end %>
