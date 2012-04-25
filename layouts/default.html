@@ -6,10 +6,15 @@
     <link rel="stylesheet" type="text/css" href="/style.css" media="screen">
     <meta name="generator" content="nanoc 3.3.5">
   </head>
+
   <body>
     <div id="main">
       <%= yield %>
+      <% if @item[:author] %>
+        <p>This page was written by <%= @item[:author] %>.</p>
+      <% end %>
     </div>
+
     <div id="sidebar">
       <h2>Documentation</h2>
       <ul>
@@ -21,6 +26,11 @@
         <li><a href="http://groups.google.com/group/nanoc/">Discussion Group</a></li>
         <li><a href="irc://chat.freenode.net/#nanoc">IRC Channel</a></li>
         <li><a href="http://projects.stoneship.org/trac/nanoc/">Wiki</a></li>
+      </ul>
+      <h2>Links</h2>
+      <ul>
+        <li><%= link_to "Home", "/" %></li>
+        <li><%= link_to "About", "/about" %></li>
       </ul>
     </div>
   </body>
