@@ -1,0 +1,11 @@
+<h2>Archive: <%= year %>/<%= mm_str_month(month) %></h2>
+<ul>
+<% articles_by_year_month[year][month].each do |article| %>
+  <li>
+    <%= link_to(article[:title], article.path) %><br />
+    <span class="meta">
+      <%= render("_summary_meta", :item => article) %>
+    </span>
+  </li>
+<% end %>
+</ul>

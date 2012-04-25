@@ -16,6 +16,7 @@
 
 preprocess do
   create_tag_pages
+  create_year_month_archive_pages
 end
 
 compile '/stylesheet/' do
