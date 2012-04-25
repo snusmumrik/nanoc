@@ -2,3 +2,5 @@
 # before nanoc starts compiling.
 
 include Nanoc::Helpers::LinkTo
+include Nanoc::Helpers::Blogging
+include Nanoc::Helpers::Rendering
